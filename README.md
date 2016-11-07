@@ -20,8 +20,8 @@ var config = new EndpointConfiguration("EndpoinName");
 config.UseSerialization<BondSerializer>();
 ```
 
- * Documentation
- * Sample
+ * **[Documentation](https://docs.particular.net/nservicebus/serialization/bond)**
+ * **[Sample](https://docs.particular.net/samples/serializers/bond/)**
 
 
 ## Icon

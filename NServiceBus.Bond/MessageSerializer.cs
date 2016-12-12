@@ -47,15 +47,15 @@ namespace NServiceBus.Bond
         void Serialize(object message, Type messageType, OutputBuffer output)
         {
             var task = message as ScheduledTask;
-            if (task != null)
+            if (task == null)
             {
-                var scheduledTaskDelegates = GetDelgates(ScheduledTaskHelper.WrapperType);
-                var wrapper = ScheduledTaskHelper.ToWrapper(task);
-                scheduledTaskDelegates.Serialize(output, wrapper);
+                var delegates = GetDelgates(messageType);
+                delegates.Serialize(output, message);
                 return;
             }
-            var delegates = GetDelgates(messageType);
-            delegates.Serialize(output, message);
+            var scheduledTaskDelegates = GetDelgates(ScheduledTaskHelper.WrapperType);
+            var wrapper = ScheduledTaskHelper.ToWrapper(task);
+            scheduledTaskDelegates.Serialize(output, wrapper);
         }
 
         object DeserializeInner(Stream stream, IList<Type> messageTypes)

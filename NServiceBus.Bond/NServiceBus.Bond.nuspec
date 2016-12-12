@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>NServiceBus.Bond</id>
-    <version>$version$-beta0001</version>
+    <version>$version$</version>
     <title>NServiceBus.Bond</title>
     <authors>Simon Cropp</authors>
     <owners>Simon Cropp</owners>
@@ -14,8 +14,8 @@
     <language>en-AU</language>
     <tags>NServiceBus, Bond, Serialization</tags>
 	  <dependencies>
-      <dependency id="NServiceBus" version="[6.0.0, 7.0.0)" />
-      <dependency id="Bond.Core.CSharp" version="[5.0.0, 6.0.0)" />
+      <dependency id="NServiceBus" version="[6.1.0, 7.0.0)" />
+      <dependency id="Bond.Core.CSharp" version="[5.1.0, 6.0.0)" />
 	  </dependencies>
   </metadata>
 </package>

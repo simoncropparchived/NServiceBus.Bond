@@ -49,7 +49,7 @@ namespace NServiceBus.Bond
             if (messageType.IsScheduleTask())
             {
                 var scheduledTaskDelegates = GetDelgates(ScheduledTaskHelper.WrapperType);
-                var wrapper = ScheduledTaskHelper.ToWrapper(message);
+                var wrapper = ScheduledTaskHelper.ToWrapper((ScheduledTask) message);
                 scheduledTaskDelegates.Serialize(output, wrapper);
                 return;
             }

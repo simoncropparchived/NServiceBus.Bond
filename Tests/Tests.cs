@@ -25,7 +25,7 @@ public class Tests
         var deserializer = new Deserializer<CompactBinaryReader<InputBuffer>>(typeof(Example));
 
         var dst = (Example) deserializer.Deserialize(reader);
-        Debug.WriteLine(dst.Name);
+        Trace.WriteLine(dst.Name);
     }
 
     [Test]
@@ -41,6 +41,6 @@ public class Tests
         var reader = new CompactBinaryReader<InputBuffer>(input);
 
         var dst = Deserialize<Example>.From(reader);
-        Debug.WriteLine(dst.Name);
+        Trace.WriteLine(dst.Name);
     }
 }

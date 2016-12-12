@@ -37,19 +37,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bond, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bond.Core.CSharp.5.0.0\lib\net45\Bond.dll</HintPath>
+      <HintPath>..\packages\Bond.Core.CSharp.5.1.0\lib\net45\Bond.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Bond.Attributes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bond.Core.CSharp.5.0.0\lib\net45\Bond.Attributes.dll</HintPath>
+      <HintPath>..\packages\Bond.Core.CSharp.5.1.0\lib\net45\Bond.Attributes.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Bond.IO, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bond.Core.CSharp.5.0.0\lib\net45\Bond.IO.dll</HintPath>
+      <HintPath>..\packages\Bond.Core.CSharp.5.1.0\lib\net45\Bond.IO.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Bond.Reflection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bond.Core.CSharp.5.1.0\lib\net45\Bond.Reflection.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NServiceBus.Core, Version=6.0.0.0, Culture=neutral, PublicKeyToken=9fc386479f8a226c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NServiceBus.6.0.0\lib\net452\NServiceBus.Core.dll</HintPath>
+      <HintPath>..\packages\NServiceBus.6.1.0\lib\net452\NServiceBus.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -65,13 +69,15 @@
     <Compile Include="MyHandler.cs" />
     <Compile Include="MyMessage.cs" />
     <Compile Include="Program.cs" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NServiceBus.Bond\NServiceBus.Bond.csproj">
       <Project>{8d87d482-bc30-49f6-946c-73dd62fc4ec0}</Project>
       <Name>NServiceBus.Bond</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

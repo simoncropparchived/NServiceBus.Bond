@@ -3,9 +3,15 @@ using Bond.IO.Unsafe;
 
 namespace NServiceBus.Bond
 {
-    public class SertializationDelegates
+    /// <summary>
+    /// Used by <see cref="BondConfigurationExtensions.SerializationDelegates"/>
+    /// </summary>
+    public class SerializationDelegates
     {
-        public SertializationDelegates(Action<OutputBuffer, object> serialize, Func<InputBuffer, object> deserialize)
+        /// <summary>
+        /// Initialize a new instance of <see cref="SerializationDelegates"/>.
+        /// </summary>
+        public SerializationDelegates(Action<OutputBuffer, object> serialize, Func<InputBuffer, object> deserialize)
         {
             Serialize = serialize;
             Deserialize = deserialize;

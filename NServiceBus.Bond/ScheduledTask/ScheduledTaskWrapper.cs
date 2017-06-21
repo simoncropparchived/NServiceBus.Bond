@@ -1,8 +1,11 @@
-﻿using Bond;
+﻿using System;
+using Bond;
 
+#pragma warning disable CS1591
 namespace NServiceBus.Bond
 {
     [Schema]
+    [Obsolete("Not for public use")]
     public class ScheduledTaskWrapper
     {
         [Id(0)]

@@ -1,6 +1,7 @@
 ﻿using System;
 using NServiceBus;
 using NServiceBus.Bond;
+#pragma warning disable 618
 
 static class ScheduledTaskHelper
 {

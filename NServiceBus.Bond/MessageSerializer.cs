@@ -1,6 +1,7 @@
 ﻿using System.Collections.Concurrent;
 using System.Threading;
 using Bond.IO.Unsafe;
+#pragma warning disable 618
 
 namespace NServiceBus.Bond
 {
@@ -12,11 +13,11 @@ namespace NServiceBus.Bond
 
     class MessageSerializer : IMessageSerializer
     {
-        Func<Type, SertializationDelegates> serializeBuilder;
+        Func<Type, SerializationDelegates> serializeBuilder;
         ThreadLocal<OutputBuffer> threadLocal = new ThreadLocal<OutputBuffer>(() => new OutputBuffer());
-        ConcurrentDictionary<RuntimeTypeHandle, SertializationDelegates> delegateCache = new ConcurrentDictionary<RuntimeTypeHandle, SertializationDelegates>();
+        ConcurrentDictionary<RuntimeTypeHandle, SerializationDelegates> delegateCache = new ConcurrentDictionary<RuntimeTypeHandle, SerializationDelegates>();
 
-        public MessageSerializer(string contentType, Func<Type, SertializationDelegates> serializeBuilder)
+        public MessageSerializer(string contentType, Func<Type, SerializationDelegates> serializeBuilder)
         {
             this.serializeBuilder = serializeBuilder;
             if (contentType == null)
@@ -73,7 +74,7 @@ namespace NServiceBus.Bond
             return delegates.Deserialize(input);
         }
 
-        SertializationDelegates GetDelgates(Type messageType)
+        SerializationDelegates GetDelgates(Type messageType)
         {
             return delegateCache.GetOrAdd(messageType.TypeHandle, handle => serializeBuilder(messageType));
         }

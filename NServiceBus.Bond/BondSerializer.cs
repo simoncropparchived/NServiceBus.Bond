@@ -29,7 +29,7 @@ namespace NServiceBus.Bond
                 {
                     serializationDelegates = messageType =>
                     {
-                        return new SertializationDelegates(
+                        return new SerializationDelegates(
                             serialize: (buffer, message) =>
                             {
                                 var writer = new CompactBinaryWriter<OutputBuffer>(buffer);

@@ -17,6 +17,8 @@ class Program
         endpointConfiguration.EnableInstallers();
         endpointConfiguration.SendFailedMessagesTo("error");
         endpointConfiguration.UsePersistence<InMemoryPersistence>();
+        var transport = endpointConfiguration.UseTransport<LearningTransport>();
+        transport.NoPayloadSizeRestriction();
 
         var endpoint = await Endpoint.Start(endpointConfiguration);
         try

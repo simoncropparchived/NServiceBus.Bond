@@ -1,7 +1,6 @@
 ﻿using NServiceBus.MessageInterfaces;
 using NServiceBus.Settings;
 using System;
-using Bond;
 using Bond.IO.Unsafe;
 using Bond.Protocols;
 using NServiceBus.Serialization;
@@ -14,7 +13,6 @@ namespace NServiceBus.Bond
     /// </summary>
     public class BondSerializer : SerializationDefinition
     {
-
         /// <summary>
         /// <see cref="SerializationDefinition.Configure"/>
         /// </summary>
@@ -29,18 +27,17 @@ namespace NServiceBus.Bond
                 {
                     serializationDelegates = messageType =>
                     {
+                        var wrapper = SerializerCache.GetSerializer(messageType);
                         return new SerializationDelegates(
                             serialize: (buffer, message) =>
                             {
                                 var writer = new CompactBinaryWriter<OutputBuffer>(buffer);
-                                var serializer = new Serializer<CompactBinaryWriter<OutputBuffer>>(messageType);
-                                serializer.Serialize(message, writer);
+                                wrapper.Serializer.Serialize(message, writer);
                             },
                             deserialize: buffer =>
                             {
                                 var reader = new CompactBinaryReader<InputBuffer>(buffer);
-                                var deserializer = new Deserializer<CompactBinaryReader<InputBuffer>>(messageType);
-                                return deserializer.Deserialize(reader);
+                                return wrapper.Deserializer.Deserialize(reader);
                             });
                     };
                 }

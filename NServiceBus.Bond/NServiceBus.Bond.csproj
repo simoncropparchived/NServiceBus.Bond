@@ -19,7 +19,7 @@
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="NServiceBus" Version="[7.0.0-alpha*, 8.0.0)" />
+    <PackageReference Include="NServiceBus" Version="[7.0.0-*, 8.0.0)" />
     <PackageReference Include="Bond.Core.CSharp" Version="6.*" />
   </ItemGroup>
 </Project>

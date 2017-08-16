@@ -4,10 +4,10 @@
     <TargetFrameworks>net452;netstandard2.0</TargetFrameworks>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <PackageId>NServiceBus.Bond</PackageId>
-    <AssemblyVersion>1.3.0</AssemblyVersion>
-    <FileVersion>1.3.0</FileVersion>
+    <AssemblyVersion>2.0.0</AssemblyVersion>
+    <FileVersion>2.0.0</FileVersion>
     <InformationalVersion>$(FileVersion)</InformationalVersion>
-    <PackageVersion>$(FileVersion)-beta002</PackageVersion>
+    <PackageVersion>$(FileVersion)-beta001</PackageVersion>
     <Authors>Simon Cropp</Authors>
     <PackageLicenseUrl>http://www.opensource.org/licenses/mit-license.php</PackageLicenseUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>

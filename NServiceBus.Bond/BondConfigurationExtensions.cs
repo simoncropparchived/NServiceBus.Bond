@@ -2,7 +2,7 @@
 using Bond;
 using Bond.Protocols;
 using NServiceBus.Bond;
-using NServiceBus.Configuration.AdvanceExtensibility;
+using NServiceBus.Configuration.AdvancedExtensibility;
 using NServiceBus.Serialization;
 using NServiceBus.Settings;
 

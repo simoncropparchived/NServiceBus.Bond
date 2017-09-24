@@ -18,12 +18,12 @@ namespace NServiceBus
         /// For serialization: default constructors of <see cref="CompactBinaryWriter{I}"/> and <see cref="Serializer{W}"/>
         /// For deserialization: default constructors of <see cref="CompactBinaryReader{I}"/> and <see cref="Deserializer{W}"/>
         /// </summary>
-        public static void SerializationDelegates(this SerializationExtensions<BondSerializer> config, Func<Type, SerializationDelegates> sertializationDelegatesBuilder)
+        public static void SerializationDelegates(this SerializationExtensions<BondSerializer> config, Func<Type, SerializationDelegates> serializationDelegatesBuilder)
         {
             Guard.AgainstNull(config, nameof(config));
-            Guard.AgainstNull(sertializationDelegatesBuilder, nameof(sertializationDelegatesBuilder));
+            Guard.AgainstNull(serializationDelegatesBuilder, nameof(serializationDelegatesBuilder));
             var settings = config.GetSettings();
-            settings.Set<Func<Type, SerializationDelegates>>(sertializationDelegatesBuilder);
+            settings.Set<Func<Type, SerializationDelegates>>(serializationDelegatesBuilder);
         }
 
         internal static Func<Type, SerializationDelegates> SerializationDelegateBuilder(this ReadOnlySettings settings)

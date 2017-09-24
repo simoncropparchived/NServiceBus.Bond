@@ -32,5 +32,4 @@ static class ScheduledTaskHelper
             Every = TimeSpan.FromTicks(target.Ticks)
         };
     }
-
 }

@@ -7,7 +7,6 @@ using NServiceBus.Serialization;
 
 namespace NServiceBus.Bond
 {
-
     /// <summary>
     /// Defines the capabilities of the Bond serializer
     /// </summary>

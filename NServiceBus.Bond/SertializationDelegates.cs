@@ -20,7 +20,7 @@ namespace NServiceBus.Bond
         /// The delegate used to serialize.
         /// </summary>
         public Action<OutputBuffer, object> Serialize { get; }
-        
+
         /// <summary>
         /// The delegate used to deserialize.
         /// </summary>

@@ -5,22 +5,17 @@ using NServiceBus.Bond;
 
 class Program
 {
-    static void Main()
+    static async Task Main()
     {
-        AsyncMain().GetAwaiter().GetResult();
-    }
-
-    static async Task AsyncMain()
-    {
-        var endpointConfiguration = new EndpointConfiguration("BondSerializerSample");
-        endpointConfiguration.UseSerialization<BondSerializer>();
-        endpointConfiguration.EnableInstallers();
-        endpointConfiguration.SendFailedMessagesTo("error");
-        endpointConfiguration.UsePersistence<InMemoryPersistence>();
-        var transport = endpointConfiguration.UseTransport<LearningTransport>();
+        var configuration = new EndpointConfiguration("BondSerializerSample");
+        configuration.UseSerialization<BondSerializer>();
+        configuration.EnableInstallers();
+        configuration.SendFailedMessagesTo("error");
+        configuration.UsePersistence<InMemoryPersistence>();
+        var transport = configuration.UseTransport<LearningTransport>();
         transport.NoPayloadSizeRestriction();
 
-        var endpoint = await Endpoint.Start(endpointConfiguration);
+        var endpoint = await Endpoint.Start(configuration);
         try
         {
             var message = new MyMessage

@@ -1,4 +1,4 @@
-![Icon](https://raw.githubusercontent.com/SimonCropp/NServiceBus.Bond/master/Icon/package_icon.png)
+![Icon](https://raw.githubusercontent.com/NServiceBusExtensions/NServiceBus.Bond/master/icon.png)
 
 NServiceBus.Bond
 ===========================
@@ -20,9 +20,9 @@ var config = new EndpointConfiguration("EndpoinName");
 config.UseSerialization<BondSerializer>();
 ```
 
- * **[Documentation](https://docs.particular.net/nservicebus/serialization/bond)**
- * **[Sample](https://docs.particular.net/samples/serializers/bond/)**
+## Documentation
 
+https://docs.particular.net/nuget/serialization/NServiceBus.Bond
 
 ## Icon
 

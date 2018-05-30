@@ -3,13 +3,11 @@ using Bond;
 using Bond.IO.Unsafe;
 using Bond.Protocols;
 using Examples;
-using NUnit.Framework;
+using Xunit;
 
-[TestFixture]
-[Explicit]
 public class Tests
 {
-    [Test]
+    [Fact]
     public void Foo2()
     {
         var output = new OutputBuffer();
@@ -28,10 +26,9 @@ public class Tests
         Trace.WriteLine(dst.Name);
     }
 
-    [Test]
+    [Fact]
     public void Foo()
     {
-
         var output = new OutputBuffer();
         var writer = new CompactBinaryWriter<OutputBuffer>(output);
 

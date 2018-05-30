@@ -16,6 +16,7 @@ namespace NServiceBus.Bond
             Serialize = serialize;
             Deserialize = deserialize;
         }
+
         /// <summary>
         /// The delegate used to serialize.
         /// </summary>

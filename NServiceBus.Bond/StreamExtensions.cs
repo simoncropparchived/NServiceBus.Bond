@@ -12,13 +12,16 @@ static class StreamExtensions
             throw new Exception("Could not read _buffer field from MemoryStream.");
         }
     }
+
     static FieldInfo field;
+
     public static byte[] GetBytesFromMemoryStream(this Stream stream)
     {
-        if (!(stream is MemoryStream memoryStream))
+        if (stream is MemoryStream memoryStream)
         {
-            throw new Exception($"Expected stream to be a MemoryStream but was a {stream.GetType().FullName}");
+            return (byte[]) field.GetValue(memoryStream);
         }
-        return (byte[])field.GetValue(memoryStream);
+        throw new Exception($"Expected stream to be a MemoryStream but was a {stream.GetType().FullName}");
+
     }
 }

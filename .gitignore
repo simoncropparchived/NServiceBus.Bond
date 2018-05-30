@@ -10,12 +10,10 @@
 *.user
 *.sln.docstates
 *.pidb
-*.ncrunchsolution
-*.ncrunchproject
-*.DotSettings
-
-
 .learningtransport
+
+.vs
+*.received.txt
 
 # Build results
 [Dd]ebug/
@@ -40,9 +38,7 @@
 *test-results*
 
 .vs/
-
-##  If you have NuGet Package Restore enabled, uncomment this
-packages/
+.learningtransport/
 nugets/
 
 # Visual Studio profiler
@@ -88,3 +84,4 @@ Fody/.DS_Store
 
 *.userprefs
 *.jtconfig
+*.bak

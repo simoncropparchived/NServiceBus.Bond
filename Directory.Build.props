@@ -11,6 +11,7 @@
     <PackageTags>NServiceBus, Bond</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/NServiceBusExtensions/NServiceBus.Bond/master/icon.png</PackageIconUrl>
     <PackageProjectUrl>https://docs.particular.net/nuget/NServiceBus.Bond</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/NServiceBusExtensions/NServiceBus.Bond</RepositoryUrl>
     <PackageOutputPath>..\nugets</PackageOutputPath>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <DebugType>embedded</DebugType>

@@ -23,7 +23,7 @@ namespace NServiceBus
             Guard.AgainstNull(config, nameof(config));
             Guard.AgainstNull(serializationDelegatesBuilder, nameof(serializationDelegatesBuilder));
             var settings = config.GetSettings();
-            settings.Set<Func<Type, SerializationDelegates>>(serializationDelegatesBuilder);
+            settings.Set(serializationDelegatesBuilder);
         }
 
         internal static Func<Type, SerializationDelegates> SerializationDelegateBuilder(this ReadOnlySettings settings)

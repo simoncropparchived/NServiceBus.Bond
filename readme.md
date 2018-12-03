@@ -1,9 +1,4 @@
-![Icon](https://raw.githubusercontent.com/NServiceBusExtensions/NServiceBus.Bond/master/icon.png)
-
-NServiceBus.Bond
-===========================
-
-Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message serialization via [Microsoft Bond](https://microsoft.github.io/bond/manual/bond_cs.html)
+<img src="https://raw.github.com/NServiceBusExtensions/NServiceBus.Bond/master/src/icon.png" height="25px"> Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message serialization via [Microsoft Bond](https://microsoft.github.io/bond/manual/bond_cs.html)
 
 
 <!--- StartOpenCollectiveBackers -->

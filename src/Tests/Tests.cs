@@ -4,8 +4,10 @@ using Bond.IO.Unsafe;
 using Bond.Protocols;
 using Examples;
 using Xunit;
+using Xunit.Abstractions;
 
-public class Tests
+public class Tests :
+    XunitLoggingBase
 {
     [Fact]
     public void Foo2()
@@ -39,5 +41,10 @@ public class Tests
 
         var dst = Deserialize<Example>.From(reader);
         Trace.WriteLine(dst.Name);
+    }
+
+    public Tests(ITestOutputHelper output) : 
+        base(output)
+    {
     }
 }

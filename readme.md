@@ -25,7 +25,7 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 
 <a href="#" id="endofbacking"></a>
 
-## The NuGet package [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.Bond.svg?style=flat)](https://www.nuget.org/packages/NServiceBus.Bond/)
+## The NuGet package [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.Bond.svg)](https://www.nuget.org/packages/NServiceBus.Bond/)
 
 https://nuget.org/packages/NServiceBus.Bond/
 

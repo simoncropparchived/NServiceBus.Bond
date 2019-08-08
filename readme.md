@@ -1,4 +1,4 @@
-<img src="https://raw.github.com/NServiceBusExtensions/NServiceBus.Bond/master/src/icon.png" height="25px"> Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message serialization via [Microsoft Bond](https://microsoft.github.io/bond/manual/bond_cs.html)
+<img src="/src/icon.png" height="25px"> Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message serialization via [Microsoft Bond](https://microsoft.github.io/bond/manual/bond_cs.html)
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -25,14 +25,15 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 
 <a href="#" id="endofbacking"></a>
 
-## The NuGet package [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.Bond.svg)](https://www.nuget.org/packages/NServiceBus.Bond/)
 
-https://nuget.org/packages/NServiceBus.Bond/
+## NuGet package
+
+https://nuget.org/packages/NServiceBus.Bond/ [![NuGet Status](http://img.shields.io/nuget/v/NServiceBus.Bond.svg)](https://www.nuget.org/packages/NServiceBus.Bond/)
 
 
 ## Usage
 
-```
+```cs
 var config = new EndpointConfiguration("EndpoinName");
 config.UseSerialization<BondSerializer>();
 ```
@@ -41,7 +42,7 @@ config.UseSerialization<BondSerializer>();
 
 https://docs.particular.net/nuget/serialization/NServiceBus.Bond
 
+
 ## Icon
 
-<a href="https://thenounproject.com/term/Chemistry/107944/" target="_blank">Chemistry</a> designed by <a href="https://thenounproject.com/Externografico/" target="_blank">Rafa Bosch
-</a> from The Noun Project
+[Chemistry](https://thenounproject.com/term/Chemistry/107944/) designed by [Rafa Bosch](https://thenounproject.com/Externografico/) from [The Noun Project](https://thenounproject.com).

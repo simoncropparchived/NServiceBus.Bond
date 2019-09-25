@@ -12,9 +12,9 @@ static class SerializerCache
     {
         return cache.GetOrAdd(messageType,
             type => new SerializeWrapper
-            {
-                Serializer = new Serializer<CompactBinaryWriter<OutputBuffer>>(type),
-                Deserializer = new Deserializer<CompactBinaryReader<InputBuffer>>(type)
-            });
+            (
+                serializer: new Serializer<CompactBinaryWriter<OutputBuffer>>(type),
+                deserializer: new Deserializer<CompactBinaryReader<InputBuffer>>(type)
+            ));
     }
 }

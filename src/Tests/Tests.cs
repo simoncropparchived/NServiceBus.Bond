@@ -43,7 +43,7 @@ public class Tests :
         Trace.WriteLine(dst.Name);
     }
 
-    public Tests(ITestOutputHelper output) : 
+    public Tests(ITestOutputHelper output) :
         base(output)
     {
     }

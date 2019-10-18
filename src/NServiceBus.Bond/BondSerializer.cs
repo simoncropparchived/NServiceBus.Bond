@@ -10,7 +10,8 @@ namespace NServiceBus.Bond
     /// <summary>
     /// Defines the capabilities of the Bond serializer
     /// </summary>
-    public class BondSerializer : SerializationDefinition
+    public class BondSerializer :
+        SerializationDefinition
     {
         /// <summary>
         /// <see cref="SerializationDefinition.Configure"/>

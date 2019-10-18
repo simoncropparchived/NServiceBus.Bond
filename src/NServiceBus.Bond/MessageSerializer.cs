@@ -11,7 +11,8 @@ using System.Linq;
 
 #pragma warning disable 618
 
-class MessageSerializer : IMessageSerializer
+class MessageSerializer :
+    IMessageSerializer
 {
     Func<Type, SerializationDelegates> serializeBuilder;
     ThreadLocal<OutputBuffer> threadLocal = new ThreadLocal<OutputBuffer>(() => new OutputBuffer());

@@ -5,9 +5,25 @@ Source File: /readme.source.md
 To change this file edit the source file and then run MarkdownSnippets.
 -->
 
-<img src="/src/icon.png" height="25px"> Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message serialization via [Microsoft Bond](https://microsoft.github.io/bond/manual/bond_cs.html)
+# <img src="/src/icon.png" height="30px"> NServiceBus.Bond
+
+[![Build status](https://ci.appveyor.com/api/projects/status/qf24j875v1ple12e/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/nservicebus-Bond)
+[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.Bond.svg?cacheSeconds=86400)](https://www.nuget.org/packages/NServiceBus.Bond/)
+
+Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message serialization via [Microsoft Bond](https://microsoft.github.io/bond/manual/bond_cs.html)
 
 > Bond is a cross-platform framework for working with schematized data. It supports cross-language serialization/deserialization and powerful generic mechanisms for efficiently manipulating data. Bond is broadly used at Microsoft in high-scale services.
+
+<!-- toc -->
+## Contents
+
+  * [Community backed](#community-backed)
+    * [Sponsors](#sponsors)
+    * [Patrons](#patrons)
+  * [Usage](#usage)
+    * [SerializationDelegates](#serializationdelegates)
+    * [Custom content key](#custom-content-key)
+<!-- endtoc -->
 
 
 <!--- StartOpenCollectiveBackers -->
@@ -36,11 +52,6 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 <a href="#" id="endofbacking"></a>
 
 
-## NuGet package
-
-https://nuget.org/packages/NServiceBus.Bond/ [![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.Bond.svg)](https://www.nuget.org/packages/NServiceBus.Bond/)
-
-
 ## Usage
 
 <!-- snippet: BondSerialization -->
@@ -51,7 +62,14 @@ endpointConfiguration.UseSerialization<BondSerializer>();
 <sup>[snippet source](/src/Tests/Snippets/Usage.cs#L10-L14) / [anchor](#snippet-bondserialization)</sup>
 <!-- endsnippet -->
 
-include: interface-not-supported
+This serializer does not support [messages defined as interfaces](https://docs.particular.net/nservicebus/messaging/messages-as-interfaces.md). If an explicit interface is sent, an exception will be thrown with the following message:
+
+```
+Interface based message are not supported.
+Create a class that implements the desired interface
+```
+
+Instead, use a public class with the same contract as the interface. The class can optionally implement any required interfaces.
 
 
 ### SerializationDelegates
@@ -122,7 +140,9 @@ static class SerializerCache
 <!-- endsnippet -->
 
 
-include: custom-contenttype-key
+### Custom content key
+
+When using [additional deserializers](https://docs.particular.net/nservicebus/serialization/#specifying-additional-deserializers) or transitioning between different versions of the same serializer it can be helpful to take explicit control over the content type a serializer passes to NServiceBus (to be used for the [ContentType header](https://docs.particular.net/nservicebus/messaging/headers.md#serialization-headers-nservicebus-contenttype)).
 
 <!-- snippet: BondContentTypeKey -->
 <a id='snippet-bondcontenttypekey'/></a>
@@ -133,6 +153,10 @@ serialization.ContentTypeKey("custom-key");
 <sup>[snippet source](/src/Tests/Snippets/Usage.cs#L44-L49) / [anchor](#snippet-bondcontenttypekey)</sup>
 <!-- endsnippet -->
 
+
+## Release Notes
+
+See [closed milestones](../../milestones?state=closed).
 
 
 ## Icon

@@ -3,11 +3,12 @@ using Bond;
 using Bond.IO.Unsafe;
 using Bond.Protocols;
 using Examples;
+using VerifyXunit;
 using Xunit;
 using Xunit.Abstractions;
 
 public class Tests :
-    XunitApprovalBase
+    VerifyBase
 {
     [Fact]
     public void Foo2()

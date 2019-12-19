@@ -8,7 +8,7 @@ To change this file edit the source file and then run MarkdownSnippets.
 # <img src="/src/icon.png" height="30px"> NServiceBus.Bond
 
 [![Build status](https://ci.appveyor.com/api/projects/status/qf24j875v1ple12e/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/nservicebus-Bond)
-[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.Bond.svg?cacheSeconds=86400)](https://www.nuget.org/packages/NServiceBus.Bond/)
+[![NuGet Status](https://img.shields.io/nuget/v/NServiceBus.Bond.svg)](https://www.nuget.org/packages/NServiceBus.Bond/)
 
 Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message serialization via [Microsoft Bond](https://microsoft.github.io/bond/manual/bond_cs.html)
 

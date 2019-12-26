@@ -5,20 +5,20 @@ using NServiceBus.Bond;
 
 class Usage
 {
-    Usage(EndpointConfiguration endpointConfiguration)
+    Usage(EndpointConfiguration configuration)
     {
         #region BondSerialization
 
-        endpointConfiguration.UseSerialization<BondSerializer>();
+        configuration.UseSerialization<BondSerializer>();
 
         #endregion
     }
 
-    void SerializationDelegates(EndpointConfiguration endpointConfiguration)
+    void SerializationDelegates(EndpointConfiguration configuration)
     {
         #region BondSerializationDelegates
 
-        var serialization = endpointConfiguration.UseSerialization<BondSerializer>();
+        var serialization = configuration.UseSerialization<BondSerializer>();
         serialization.SerializationDelegates(
             serializationDelegatesBuilder: messageType =>
             {
@@ -39,11 +39,11 @@ class Usage
         #endregion
     }
 
-    void ContentTypeKey(EndpointConfiguration endpointConfiguration)
+    void ContentTypeKey(EndpointConfiguration configuration)
     {
         #region BondContentTypeKey
 
-        var serialization = endpointConfiguration.UseSerialization<BondSerializer>();
+        var serialization = configuration.UseSerialization<BondSerializer>();
         serialization.ContentTypeKey("custom-key");
 
         #endregion

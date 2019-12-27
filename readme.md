@@ -22,9 +22,7 @@ Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message 
     * [Patrons](#patrons)
   * [Usage](#usage)
     * [SerializationDelegates](#serializationdelegates)
-    * [Custom content key](#custom-content-key)
-<!-- endtoc -->
-
+    * [Custom content key](#custom-content-key)<!-- endtoc -->
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -57,9 +55,9 @@ Thanks to all the backing developers! Support this project by [becoming a patron
 <!-- snippet: BondSerialization -->
 <a id='snippet-bondserialization'/></a>
 ```cs
-endpointConfiguration.UseSerialization<BondSerializer>();
+configuration.UseSerialization<BondSerializer>();
 ```
-<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L10-L14) / [anchor](#snippet-bondserialization)</sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L10-L14' title='File snippet `bondserialization` was extracted from'>snippet source</a> | <a href='#snippet-bondserialization' title='Navigate to start of snippet `bondserialization`'>anchor</a></sup>
 <!-- endsnippet -->
 
 This serializer does not support [messages defined as interfaces](https://docs.particular.net/nservicebus/messaging/messages-as-interfaces). If an explicit interface is sent, an exception will be thrown with the following message:
@@ -81,7 +79,7 @@ The default serialization delegates are as follows.
 <!-- snippet: BondSerializationDelegates -->
 <a id='snippet-bondserializationdelegates'/></a>
 ```cs
-var serialization = endpointConfiguration.UseSerialization<BondSerializer>();
+var serialization = configuration.UseSerialization<BondSerializer>();
 serialization.SerializationDelegates(
     serializationDelegatesBuilder: messageType =>
     {
@@ -99,7 +97,7 @@ serialization.SerializationDelegates(
             });
     });
 ```
-<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L19-L39) / [anchor](#snippet-bondserializationdelegates)</sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L19-L39' title='File snippet `bondserializationdelegates` was extracted from'>snippet source</a> | <a href='#snippet-bondserializationdelegates' title='Navigate to start of snippet `bondserializationdelegates`'>anchor</a></sup>
 <!-- endsnippet -->
 
 The serializers are cached as per the [Bond performance guidance](https://microsoft.github.io/bond/manual/bond_cs.html#performance).
@@ -136,7 +134,7 @@ static class SerializerCache
     }
 }
 ```
-<sup>[snippet source](/src/Tests/Snippets/SerializerCache.cs#L7-L36) / [anchor](#snippet-serializercache)</sup>
+<sup><a href='/src/Tests/Snippets/SerializerCache.cs#L7-L36' title='File snippet `serializercache` was extracted from'>snippet source</a> | <a href='#snippet-serializercache' title='Navigate to start of snippet `serializercache`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -147,10 +145,10 @@ When using [additional deserializers](https://docs.particular.net/nservicebus/se
 <!-- snippet: BondContentTypeKey -->
 <a id='snippet-bondcontenttypekey'/></a>
 ```cs
-var serialization = endpointConfiguration.UseSerialization<BondSerializer>();
+var serialization = configuration.UseSerialization<BondSerializer>();
 serialization.ContentTypeKey("custom-key");
 ```
-<sup>[snippet source](/src/Tests/Snippets/Usage.cs#L44-L49) / [anchor](#snippet-bondcontenttypekey)</sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L44-L49' title='File snippet `bondcontenttypekey` was extracted from'>snippet source</a> | <a href='#snippet-bondcontenttypekey' title='Navigate to start of snippet `bondcontenttypekey`'>anchor</a></sup>
 <!-- endsnippet -->
 
 

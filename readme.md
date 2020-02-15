@@ -18,6 +18,8 @@ Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message 
 ## Contents
 
   * [Community backed](#community-backed)
+    * [Sponsors](#sponsors)
+    * [Patrons](#patrons)
   * [Usage](#usage)
     * [SerializationDelegates](#serializationdelegates)
     * [Custom content key](#custom-content-key)

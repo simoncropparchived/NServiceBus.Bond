@@ -3,12 +3,9 @@ using Bond;
 using Bond.IO.Unsafe;
 using Bond.Protocols;
 using Examples;
-using VerifyXunit;
 using Xunit;
-using Xunit.Abstractions;
 
-public class Tests :
-    VerifyBase
+public class Tests
 {
     [Fact]
     public void Foo2()
@@ -42,10 +39,5 @@ public class Tests :
 
         var dst = Deserialize<Example>.From(reader);
         Trace.WriteLine(dst.Name);
-    }
-
-    public Tests(ITestOutputHelper output) :
-        base(output)
-    {
     }
 }

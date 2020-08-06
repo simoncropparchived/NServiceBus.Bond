@@ -60,7 +60,7 @@ Support is available via a [Tidelift Subscription](https://tidelift.com/subscrip
 ## Usage
 
 <!-- snippet: BondSerialization -->
-<a id='snippet-bondserialization'/></a>
+<a id='snippet-bondserialization'></a>
 ```cs
 configuration.UseSerialization<BondSerializer>();
 ```
@@ -84,7 +84,7 @@ Customizes the cached delegates that serialize and deserialize message types. Th
 The default serialization delegates are as follows.
 
 <!-- snippet: BondSerializationDelegates -->
-<a id='snippet-bondserializationdelegates'/></a>
+<a id='snippet-bondserializationdelegates'></a>
 ```cs
 var serialization = configuration.UseSerialization<BondSerializer>();
 serialization.SerializationDelegates(
@@ -110,7 +110,7 @@ serialization.SerializationDelegates(
 The serializers are cached as per the [Bond performance guidance](https://microsoft.github.io/bond/manual/bond_cs.html#performance).
 
 <!-- snippet: SerializerCache -->
-<a id='snippet-serializercache'/></a>
+<a id='snippet-serializercache'></a>
 ```cs
 static class SerializerCache
 {
@@ -150,7 +150,7 @@ static class SerializerCache
 When using [additional deserializers](https://docs.particular.net/nservicebus/serialization/#specifying-additional-deserializers) or transitioning between different versions of the same serializer it can be helpful to take explicit control over the content type a serializer passes to NServiceBus (to be used for the [ContentType header](https://docs.particular.net/nservicebus/messaging/headers#serialization-headers-nservicebus-contenttype)).
 
 <!-- snippet: BondContentTypeKey -->
-<a id='snippet-bondcontenttypekey'/></a>
+<a id='snippet-bondcontenttypekey'></a>
 ```cs
 var serialization = configuration.UseSerialization<BondSerializer>();
 serialization.ContentTypeKey("custom-key");

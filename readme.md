@@ -24,7 +24,7 @@ Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message 
   * [Usage](#usage)
     * [SerializationDelegates](#serializationdelegates)
     * [Custom content key](#custom-content-key)
-  * [Security contact information](#security-contact-information)<!-- endtoc -->
+  * [Security contact information](#security-contact-information)<!-- endToc -->
 
 <!--- StartOpenCollectiveBackers -->
 
@@ -65,7 +65,7 @@ Support is available via a [Tidelift Subscription](https://tidelift.com/subscrip
 configuration.UseSerialization<BondSerializer>();
 ```
 <sup><a href='/src/Tests/Snippets/Usage.cs#L10-L14' title='File snippet `bondserialization` was extracted from'>snippet source</a> | <a href='#snippet-bondserialization' title='Navigate to start of snippet `bondserialization`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 This serializer does not support [messages defined as interfaces](https://docs.particular.net/nservicebus/messaging/messages-as-interfaces). If an explicit interface is sent, an exception will be thrown with the following message:
 
@@ -105,7 +105,7 @@ serialization.SerializationDelegates(
     });
 ```
 <sup><a href='/src/Tests/Snippets/Usage.cs#L19-L39' title='File snippet `bondserializationdelegates` was extracted from'>snippet source</a> | <a href='#snippet-bondserializationdelegates' title='Navigate to start of snippet `bondserializationdelegates`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 The serializers are cached as per the [Bond performance guidance](https://microsoft.github.io/bond/manual/bond_cs.html#performance).
 
@@ -142,7 +142,7 @@ static class SerializerCache
 }
 ```
 <sup><a href='/src/Tests/Snippets/SerializerCache.cs#L7-L36' title='File snippet `serializercache` was extracted from'>snippet source</a> | <a href='#snippet-serializercache' title='Navigate to start of snippet `serializercache`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ### Custom content key
@@ -156,7 +156,7 @@ var serialization = configuration.UseSerialization<BondSerializer>();
 serialization.ContentTypeKey("custom-key");
 ```
 <sup><a href='/src/Tests/Snippets/Usage.cs#L44-L49' title='File snippet `bondcontenttypekey` was extracted from'>snippet source</a> | <a href='#snippet-bondcontenttypekey' title='Navigate to start of snippet `bondcontenttypekey`'>anchor</a></sup>
-<!-- endsnippet -->
+<!-- endSnippet -->
 
 
 ## Security contact information

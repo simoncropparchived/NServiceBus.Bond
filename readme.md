@@ -60,11 +60,11 @@ Support is available via a [Tidelift Subscription](https://tidelift.com/subscrip
 ## Usage
 
 <!-- snippet: BondSerialization -->
-<a id='bb4371b7'></a>
+<a id='bondserialization'></a>
 ```cs
 configuration.UseSerialization<BondSerializer>();
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L10-L14' title='Snippet source file'>snippet source</a> | <a href='#bb4371b7' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L10-L14' title='Snippet source file'>snippet source</a> | <a href='#bondserialization' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 This serializer does not support [messages defined as interfaces](https://docs.particular.net/nservicebus/messaging/messages-as-interfaces). If an explicit interface is sent, an exception will be thrown with the following message:
@@ -84,7 +84,7 @@ Customizes the cached delegates that serialize and deserialize message types. Th
 The default serialization delegates are as follows.
 
 <!-- snippet: BondSerializationDelegates -->
-<a id='1d6bd8c4'></a>
+<a id='bondserializationdelegates'></a>
 ```cs
 var serialization = configuration.UseSerialization<BondSerializer>();
 serialization.SerializationDelegates(
@@ -104,13 +104,13 @@ serialization.SerializationDelegates(
             });
     });
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L19-L39' title='Snippet source file'>snippet source</a> | <a href='#1d6bd8c4' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L19-L39' title='Snippet source file'>snippet source</a> | <a href='#bondserializationdelegates' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 The serializers are cached as per the [Bond performance guidance](https://microsoft.github.io/bond/manual/bond_cs.html#performance).
 
 <!-- snippet: SerializerCache -->
-<a id='d5a9703b'></a>
+<a id='serializercache'></a>
 ```cs
 static class SerializerCache
 {
@@ -141,7 +141,7 @@ static class SerializerCache
     }
 }
 ```
-<sup><a href='/src/Tests/Snippets/SerializerCache.cs#L7-L36' title='Snippet source file'>snippet source</a> | <a href='#d5a9703b' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/SerializerCache.cs#L7-L36' title='Snippet source file'>snippet source</a> | <a href='#serializercache' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -150,12 +150,12 @@ static class SerializerCache
 When using [additional deserializers](https://docs.particular.net/nservicebus/serialization/#specifying-additional-deserializers) or transitioning between different versions of the same serializer it can be helpful to take explicit control over the content type a serializer passes to NServiceBus (to be used for the [ContentType header](https://docs.particular.net/nservicebus/messaging/headers#serialization-headers-nservicebus-contenttype)).
 
 <!-- snippet: BondContentTypeKey -->
-<a id='ed0b853d'></a>
+<a id='bondcontenttypekey'></a>
 ```cs
 var serialization = configuration.UseSerialization<BondSerializer>();
 serialization.ContentTypeKey("custom-key");
 ```
-<sup><a href='/src/Tests/Snippets/Usage.cs#L44-L49' title='Snippet source file'>snippet source</a> | <a href='#ed0b853d' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/Usage.cs#L44-L49' title='Snippet source file'>snippet source</a> | <a href='#bondcontenttypekey' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

@@ -14,18 +14,6 @@ Add support for [NServiceBus](https://docs.particular.net/nservicebus/) message 
 
 > Bond is a cross-platform framework for working with schematized data. It supports cross-language serialization/deserialization and powerful generic mechanisms for efficiently manipulating data. Bond is broadly used at Microsoft in high-scale services.
 
-<!-- toc -->
-## Contents
-
-  * [Community backed](#community-backed)
-    * [Sponsors](#sponsors)
-    * [Patrons](#patrons)
-  * [Support via TideLift](#support-via-tidelift)
-  * [Usage](#usage)
-    * [SerializationDelegates](#serializationdelegates)
-    * [Custom content key](#custom-content-key)
-  * [Security contact information](#security-contact-information)<!-- endToc -->
-
 <!--- StartOpenCollectiveBackers -->
 
 [Already a Patron? skip past this section](#endofbacking)
@@ -157,11 +145,6 @@ serialization.ContentTypeKey("custom-key");
 ```
 <sup><a href='/src/Tests/Snippets/Usage.cs#L44-L49' title='Snippet source file'>snippet source</a> | <a href='#snippet-bondcontenttypekey' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
-
-
-## Security contact information
-
-To report a security vulnerability, use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
 
 
 ## Icon

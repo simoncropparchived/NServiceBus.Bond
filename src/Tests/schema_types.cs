@@ -45,7 +45,7 @@ namespace Examples
         protected Example(string fullName, string name)
         {
             Name = "";
-            Constants = new List<double>();
+            Constants = new();
         }
     }
 } // Examples

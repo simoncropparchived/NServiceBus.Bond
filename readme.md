@@ -79,7 +79,7 @@ serialization.SerializationDelegates(
     serializationDelegatesBuilder: messageType =>
     {
         var item = SerializerCache.GetSerializer(messageType);
-        return new SerializationDelegates(
+        return new(
             serialize: (buffer, message) =>
             {
                 var writer = new CompactBinaryWriter<OutputBuffer>(buffer);
@@ -102,15 +102,14 @@ The serializers are cached as per the [Bond performance guidance](https://micros
 ```cs
 static class SerializerCache
 {
-    static ConcurrentDictionary<Type, Item> cache = new ConcurrentDictionary<Type, Item>();
+    static ConcurrentDictionary<Type, Item> cache = new();
 
     public static Item GetSerializer(Type messageType)
     {
         return cache.GetOrAdd(messageType,
-            type => new Item
-            (
-                new Serializer<CompactBinaryWriter<OutputBuffer>>(type),
-                new Deserializer<CompactBinaryReader<InputBuffer>>(type)
+            type => new(
+                new(type),
+                new(type)
             ));
     }
 
@@ -129,7 +128,7 @@ static class SerializerCache
     }
 }
 ```
-<sup><a href='/src/Tests/Snippets/SerializerCache.cs#L7-L36' title='Snippet source file'>snippet source</a> | <a href='#snippet-serializercache' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/SerializerCache.cs#L7-L35' title='Snippet source file'>snippet source</a> | <a href='#snippet-serializercache' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

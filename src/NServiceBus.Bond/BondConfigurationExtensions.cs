@@ -20,13 +20,11 @@ namespace NServiceBus
         /// </summary>
         public static void SerializationDelegates(this SerializationExtensions<BondSerializer> config, Func<Type, SerializationDelegates> serializationDelegatesBuilder)
         {
-            Guard.AgainstNull(config, nameof(config));
-            Guard.AgainstNull(serializationDelegatesBuilder, nameof(serializationDelegatesBuilder));
             var settings = config.GetSettings();
             settings.Set(serializationDelegatesBuilder);
         }
 
-        internal static Func<Type, SerializationDelegates> SerializationDelegateBuilder(this ReadOnlySettings settings)
+        internal static Func<Type, SerializationDelegates>? SerializationDelegateBuilder(this ReadOnlySettings settings)
         {
             return settings.GetOrDefault<Func<Type, SerializationDelegates>>();
         }
@@ -41,13 +39,12 @@ namespace NServiceBus
         /// <param name="contentTypeKey">The content type key to use.</param>
         public static void ContentTypeKey(this SerializationExtensions<BondSerializer> config, string contentTypeKey)
         {
-            Guard.AgainstNull(config, nameof(config));
-            Guard.AgainstNullOrEmpty(contentTypeKey, nameof(contentTypeKey));
+            Guard.AgainstEmpty(contentTypeKey, nameof(contentTypeKey));
             var settings = config.GetSettings();
             settings.Set("NServiceBus.Bond.ContentTypeKey", contentTypeKey);
         }
 
-        internal static string GetContentTypeKey(this ReadOnlySettings settings)
+        internal static string? GetContentTypeKey(this ReadOnlySettings settings)
         {
             return settings.GetOrDefault<string>("NServiceBus.Bond.ContentTypeKey");
         }

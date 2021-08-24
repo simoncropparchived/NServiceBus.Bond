@@ -18,7 +18,7 @@ namespace NServiceBus.Bond
         /// </summary>
         public override Func<IMessageMapper, IMessageSerializer> Configure(ReadOnlySettings settings)
         {
-            return mapper =>
+            return _ =>
             {
                 var contentTypeKey = settings.GetContentTypeKey();
 
@@ -28,7 +28,7 @@ namespace NServiceBus.Bond
                     serializationDelegates = messageType =>
                     {
                         var wrapper = SerializerCache.GetSerializer(messageType);
-                        return new SerializationDelegates(
+                        return new(
                             serialize: (buffer, message) =>
                             {
                                 var writer = new CompactBinaryWriter<OutputBuffer>(buffer);

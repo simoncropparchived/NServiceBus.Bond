@@ -15,10 +15,10 @@ class MessageSerializer :
     IMessageSerializer
 {
     Func<Type, SerializationDelegates> serializeBuilder;
-    ThreadLocal<OutputBuffer> threadLocal = new ThreadLocal<OutputBuffer>(() => new OutputBuffer());
-    ConcurrentDictionary<RuntimeTypeHandle, SerializationDelegates> delegateCache = new ConcurrentDictionary<RuntimeTypeHandle, SerializationDelegates>();
+    ThreadLocal<OutputBuffer> threadLocal = new(() => new());
+    ConcurrentDictionary<RuntimeTypeHandle, SerializationDelegates> delegateCache = new();
 
-    public MessageSerializer(string contentType, Func<Type, SerializationDelegates> serializeBuilder)
+    public MessageSerializer(string? contentType, Func<Type, SerializationDelegates> serializeBuilder)
     {
         this.serializeBuilder = serializeBuilder;
         if (contentType == null)
@@ -36,7 +36,7 @@ class MessageSerializer :
         var messageType = message.GetType();
         if (messageType.Name.EndsWith("__impl"))
         {
-            throw new Exception("Interface based message are not supported. Create a class that implements the desired interface.");
+            throw new("Interface based message are not supported. Create a class that implements the desired interface.");
         }
 
         var output = threadLocal.Value;
@@ -76,7 +76,7 @@ class MessageSerializer :
 
     SerializationDelegates GetDelegates(Type messageType)
     {
-        return delegateCache.GetOrAdd(messageType.TypeHandle, handle => serializeBuilder(messageType));
+        return delegateCache.GetOrAdd(messageType.TypeHandle, _ => serializeBuilder(messageType));
     }
 
     public object[] Deserialize(Stream stream, IList<Type> messageTypes)

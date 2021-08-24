@@ -7,15 +7,14 @@ using Bond.Protocols;
 #region SerializerCache
 static class SerializerCache
 {
-    static ConcurrentDictionary<Type, Item> cache = new ConcurrentDictionary<Type, Item>();
+    static ConcurrentDictionary<Type, Item> cache = new();
 
     public static Item GetSerializer(Type messageType)
     {
         return cache.GetOrAdd(messageType,
-            type => new Item
-            (
-                new Serializer<CompactBinaryWriter<OutputBuffer>>(type),
-                new Deserializer<CompactBinaryReader<InputBuffer>>(type)
+            type => new(
+                new(type),
+                new(type)
             ));
     }
 

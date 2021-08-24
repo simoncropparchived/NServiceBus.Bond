@@ -23,7 +23,7 @@ class Usage
             serializationDelegatesBuilder: messageType =>
             {
                 var item = SerializerCache.GetSerializer(messageType);
-                return new SerializationDelegates(
+                return new(
                     serialize: (buffer, message) =>
                     {
                         var writer = new CompactBinaryWriter<OutputBuffer>(buffer);

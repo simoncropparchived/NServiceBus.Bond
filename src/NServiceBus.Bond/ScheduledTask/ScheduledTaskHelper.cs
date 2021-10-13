@@ -1,5 +1,4 @@
-﻿using System;
-using NServiceBus;
+﻿using NServiceBus;
 using NServiceBus.Bond;
 #pragma warning disable 618
 

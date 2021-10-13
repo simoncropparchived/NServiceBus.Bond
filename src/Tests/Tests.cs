@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using Bond;
+﻿using Bond;
 using Bond.IO.Unsafe;
 using Bond.Protocols;
 using Examples;

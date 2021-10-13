@@ -1,13 +1,7 @@
-﻿using System.Collections.Concurrent;
-using System.Threading;
-using Bond.IO.Unsafe;
+﻿using Bond.IO.Unsafe;
 using NServiceBus;
 using NServiceBus.Bond;
 using NServiceBus.Serialization;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 
 #pragma warning disable 618
 

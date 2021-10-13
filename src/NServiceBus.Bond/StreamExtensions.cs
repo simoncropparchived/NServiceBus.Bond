@@ -1,7 +1,4 @@
-﻿using System.IO;
-using System.Reflection;
-
-static class StreamExtensions
+﻿static class StreamExtensions
 {
     static StreamExtensions()
     {

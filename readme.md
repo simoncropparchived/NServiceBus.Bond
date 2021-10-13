@@ -128,7 +128,7 @@ static class SerializerCache
     }
 }
 ```
-<sup><a href='/src/Tests/Snippets/SerializerCache.cs#L7-L35' title='Snippet source file'>snippet source</a> | <a href='#snippet-serializercache' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/SerializerCache.cs#L5-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-serializercache' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

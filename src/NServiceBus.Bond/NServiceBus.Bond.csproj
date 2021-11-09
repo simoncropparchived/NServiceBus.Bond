@@ -7,6 +7,6 @@
     <PackageReference Include="NServiceBus" Version="7.5.0" />
     <PackageReference Include="Bond.Core.CSharp" Version="9.0.5" />
     <PackageReference Include="ProjectDefaults" Version="1.0.61" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" Condition="$(Configuration) == 'Release'" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.0" PrivateAssets="All" Condition="$(Configuration) == 'Release'" />
   </ItemGroup>
 </Project>

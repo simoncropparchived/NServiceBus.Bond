@@ -2,7 +2,6 @@
 using Bond.IO.Unsafe;
 using Bond.Protocols;
 using Examples;
-using Xunit;
 
 public class Tests
 {

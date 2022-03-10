@@ -99,14 +99,12 @@ static class SerializerCache
 {
     static ConcurrentDictionary<Type, Item> cache = new();
 
-    public static Item GetSerializer(Type messageType)
-    {
-        return cache.GetOrAdd(messageType,
+    public static Item GetSerializer(Type messageType) =>
+        cache.GetOrAdd(messageType,
             type => new(
                 new(type),
                 new(type)
             ));
-    }
 
     public class Item
     {
@@ -123,7 +121,7 @@ static class SerializerCache
     }
 }
 ```
-<sup><a href='/src/Tests/Snippets/SerializerCache.cs#L5-L33' title='Snippet source file'>snippet source</a> | <a href='#snippet-serializercache' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Snippets/SerializerCache.cs#L5-L31' title='Snippet source file'>snippet source</a> | <a href='#snippet-serializercache' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

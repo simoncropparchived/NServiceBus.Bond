@@ -24,28 +24,28 @@
 // ReSharper disable RedundantUsingDirective
 #endregion
 
-namespace Examples
+namespace Examples;
+
+using System.Collections.Generic;
+
+[global::Bond.Schema]
+[System.CodeDom.Compiler.GeneratedCode("gbc", "0.10.0.0")]
+public partial class Example
 {
-    using System.Collections.Generic;
+    [global::Bond.Id(0)]
+    public string Name { get; set; }
 
-    [global::Bond.Schema]
-    [System.CodeDom.Compiler.GeneratedCode("gbc", "0.10.0.0")]
-    public partial class Example
+    [global::Bond.Id(1)]
+    public List<double> Constants { get; set; }
+
+    public Example()
+        : this("Examples.Example", "Example")
+    {}
+
+    protected Example(string fullName, string name)
     {
-        [global::Bond.Id(0)]
-        public string Name { get; set; }
-
-        [global::Bond.Id(1)]
-        public List<double> Constants { get; set; }
-
-        public Example()
-            : this("Examples.Example", "Example")
-        {}
-
-        protected Example(string fullName, string name)
-        {
-            Name = "";
-            Constants = new();
-        }
+        Name = "";
+        Constants = new();
     }
-} // Examples
+}
+// Examples

@@ -7,14 +7,12 @@ static class SerializerCache
 {
     static ConcurrentDictionary<Type, Item> cache = new();
 
-    public static Item GetSerializer(Type messageType)
-    {
-        return cache.GetOrAdd(messageType,
+    public static Item GetSerializer(Type messageType) =>
+        cache.GetOrAdd(messageType,
             type => new(
                 new(type),
                 new(type)
             ));
-    }
 
     public class Item
     {

@@ -24,9 +24,7 @@ public static class BondConfigurationExtensions
     }
 
     internal static Func<Type, SerializationDelegates>? SerializationDelegateBuilder(this ReadOnlySettings settings)
-    {
-        return settings.GetOrDefault<Func<Type, SerializationDelegates>>();
-    }
+        => settings.GetOrDefault<Func<Type, SerializationDelegates>>();
 
     /// <summary>
     /// Configures string to use for <see cref="Headers.ContentType"/> headers.
@@ -44,7 +42,5 @@ public static class BondConfigurationExtensions
     }
 
     internal static string? GetContentTypeKey(this ReadOnlySettings settings)
-    {
-        return settings.GetOrDefault<string>("NServiceBus.Bond.ContentTypeKey");
-    }
+        => settings.GetOrDefault<string>("NServiceBus.Bond.ContentTypeKey");
 }

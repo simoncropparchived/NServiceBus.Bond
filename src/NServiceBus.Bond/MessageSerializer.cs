@@ -15,14 +15,7 @@ class MessageSerializer :
     public MessageSerializer(string? contentType, Func<Type, SerializationDelegates> serializeBuilder)
     {
         this.serializeBuilder = serializeBuilder;
-        if (contentType == null)
-        {
-            ContentType = "bond";
-        }
-        else
-        {
-            ContentType = contentType;
-        }
+        ContentType = contentType ?? "bond";
     }
 
     public void Serialize(object message, Stream stream)
@@ -42,7 +35,7 @@ class MessageSerializer :
 
     void Serialize(object message, Type messageType, OutputBuffer output)
     {
-        if (!(message is ScheduledTask task))
+        if (message is not ScheduledTask task)
         {
             var delegates = GetDelegates(messageType);
             delegates.Serialize(output, message);
@@ -69,17 +62,13 @@ class MessageSerializer :
     }
 
     SerializationDelegates GetDelegates(Type messageType)
-    {
-        return delegateCache.GetOrAdd(messageType.TypeHandle, _ => serializeBuilder(messageType));
-    }
+        => delegateCache.GetOrAdd(messageType.TypeHandle, _ => serializeBuilder(messageType));
 
-    public object[] Deserialize(Stream stream, IList<Type> messageTypes)
-    {
-        return new[]
+    public object[] Deserialize(Stream stream, IList<Type> messageTypes) =>
+        new[]
         {
             DeserializeInner(stream, messageTypes)
         };
-    }
 
     public string ContentType { get; }
 }

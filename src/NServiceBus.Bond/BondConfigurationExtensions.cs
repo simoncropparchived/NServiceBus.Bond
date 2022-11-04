@@ -23,7 +23,7 @@ public static class BondConfigurationExtensions
         settings.Set(serializationDelegatesBuilder);
     }
 
-    internal static Func<Type, SerializationDelegates>? SerializationDelegateBuilder(this ReadOnlySettings settings)
+    internal static Func<Type, SerializationDelegates>? SerializationDelegateBuilder(this IReadOnlySettings settings)
         => settings.GetOrDefault<Func<Type, SerializationDelegates>>();
 
     /// <summary>
@@ -41,6 +41,6 @@ public static class BondConfigurationExtensions
         settings.Set("NServiceBus.Bond.ContentTypeKey", contentTypeKey);
     }
 
-    internal static string? GetContentTypeKey(this ReadOnlySettings settings)
+    internal static string? GetContentTypeKey(this IReadOnlySettings settings)
         => settings.GetOrDefault<string>("NServiceBus.Bond.ContentTypeKey");
 }

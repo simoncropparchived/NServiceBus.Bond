@@ -15,7 +15,7 @@ public class BondSerializer :
     /// <summary>
     /// <see cref="SerializationDefinition.Configure"/>
     /// </summary>
-    public override Func<IMessageMapper, IMessageSerializer> Configure(ReadOnlySettings settings) =>
+    public override Func<IMessageMapper, IMessageSerializer> Configure(IReadOnlySettings settings) =>
         _ =>
         {
             var contentTypeKey = settings.GetContentTypeKey();
